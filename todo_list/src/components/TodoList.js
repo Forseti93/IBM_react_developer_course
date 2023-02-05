@@ -5,11 +5,11 @@ const TodoList = (props) => {
     <div className="todos-list">
       {props.todos.map((todoElement) => (
         <div
-          className="todos-list-todo spread-between width80 center"
+          className="todos-list-todo spread-between center"
           key={todoElement.id}
         >
           <div
-            className={todoElement.completed ? "crossed-out" : ""}
+            className={"todos-list-text" + (todoElement.completed ? "crossed-out" : "")}
             onClick={() => props.toggleComplete(todoElement.id)}
           >
             {todoElement.id === props.editingTodoId ? (
